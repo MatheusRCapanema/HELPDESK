@@ -28,3 +28,7 @@ Route::get('/login', function () {
 Route::get('/inicio', function () {
     return view('welcome');
 });
+
+Route::get('/dados', function(){
+    return DB::select('select * from perfil');
+});
