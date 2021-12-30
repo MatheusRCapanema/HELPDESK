@@ -1,0 +1,57 @@
+body{
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 14;
+    color: #333;
+    text-align:left;
+    text-decoration: none;
+    background: #FFFFFF;
+}
+.Page_Wrapper{
+    display: flex;
+    align-items: stretch;
+    justify-items: start;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-family: system-ui;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    text-align: left;
+    text-decoration: none;
+}
+.Page_Container{
+    display: flex;
+    align-items: stretch;
+    justify-items: start;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    font-family: system-ui;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    text-align: left;
+    text-decoration: none;
+    background-color: #1b2d47;
+}
+.Block_1{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 40 40 40 40;
+    height: 100%;
+    position: static;
+    font-family: system-ui;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    text-align: left;
+    text-decoration: none;
+}
+.Content_Wrapper{
+    display: flex;
+    justify-items: stretch;
+}
