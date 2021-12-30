@@ -16,12 +16,12 @@ class CreateAreasTable extends Migration
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
             $table->String('Nome_area',25)->nullable();
+            $table->String('telefone',10);
             $table->unsignedBigInteger('fk_CNPJ')->nullable();
             $table->foreign('fk_CNPJ')->references('CNPJ')->on('empresas');
             
         });
 
-       
     }
 
     /**
@@ -31,10 +31,10 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
-    
+        Schema::table('areas', function (Blueprint $table) {
             $table->dropForeign('areas_fk_CNPJ_foreign');
             $table->dropColumn('fk_CNPJ');
-  
+        });
 
         Schema::dropIfExists('areas');
     }
