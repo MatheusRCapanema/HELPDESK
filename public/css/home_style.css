@@ -18,7 +18,7 @@ header{
     align-items: center;
     transition: 0.6s;
     padding: 40px 100px;
-    z-index: 10000;
+    z-index: 2;
 }
 header.sticky{
     padding: 5px 100px;
@@ -53,16 +53,62 @@ header ul li a{
     font-weight: 500;
     transition: 0.6s;
 }
-.banner{
+#banner{
     position: relative;
     width: 100%;
     height: 100vh;
     background: url("https://www.linkpicture.com/q/imageonline-co-blurimage-1.png");
     background-size: cover;
+
 }
+#banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom , #505050, #1d1d1d, #000000);
+    opacity: .5;
+}
+
 header.sticky .logo,
 header.sticky ul li a{
     color: #000;
+}
+
+h1{
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+}
+h3{
+    font-weight: 400;
+    color: #FFFFFF;
+}
+#main_text{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+}
+#main_text h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+#main_text h3{
+    font-family: open-sans;
+    margin-top: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 20px;
 }
 
 .a-23 {
@@ -77,8 +123,6 @@ header.sticky ul li a{
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
-    margin: 0;
-    outline: none;
     padding: 13px 23px;
     position: relative;
     text-align: center;
@@ -88,6 +132,9 @@ header.sticky ul li a{
     user-select: none;
     -webkit-user-select: none;
     width: auto;
+    margin-top: 150px;
+    top: 49.3%;
+    left: 47.5%;
 }
 
 .a-23:focus-visible {
@@ -152,3 +199,4 @@ header.sticky ul li a{
     cursor: not-allowed;
     opacity: 1;
 }
+

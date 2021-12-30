@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/cadastro', function () {
-    return view('welcome');
+    return view('cadastro');
 })->name('site.cadastro');
 
 Route::get('/login', function () {
@@ -28,3 +28,10 @@ Route::get('/login', function () {
 Route::get('/inicio', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
