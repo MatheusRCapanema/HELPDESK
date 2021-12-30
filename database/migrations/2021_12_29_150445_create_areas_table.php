@@ -32,8 +32,7 @@ class CreateAreasTable extends Migration
     public function down()
     {
     
-            $table->dropForeign('areas_fk_CNPJ_foreign');
-            $table->dropColumn('fk_CNPJ');
+           
   
 
         Schema::dropIfExists('areas');

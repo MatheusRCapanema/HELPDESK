@@ -16,8 +16,8 @@
             <li><a href="{{route('site.cadastro')}}"> Sobre</a></li>
             <li><a href="#"> Serviços</a></li>
             <li><a href="#"> Time</a></li>
-            <li><a href="#" class="a-24" role="button">Login</a></li>
-            <li><a href="#" class="a-23" role="button">Cadastro</a></li>
+            <li><a href="{{route('login')}}" class="a-24" role="button">Login</a></li>
+            <li><a href="{{route('register')}}" class="a-23" role="button">Cadastro</a></li>
         </ul>
     </header>
     <section class="banner"></section>
