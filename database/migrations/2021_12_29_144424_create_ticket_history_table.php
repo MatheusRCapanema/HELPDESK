@@ -22,6 +22,8 @@ class CreateTicketHistoryTable extends Migration
             $table->foreign('fk_anexos')->references('id')->on('anexos');
             $table->unsignedBigInteger('fk_usuario')->nullable();
             $table->foreign('fk_usuario')->references('id')->on('users');
+            $table->unsignedBigInteger('fk_ticket')->nullable();
+            $table->foreign('fk_ticket')->references('id')->on('ticket');
             $table->timestamps();
         });
     }
@@ -41,6 +43,8 @@ class CreateTicketHistoryTable extends Migration
             $table->dropColumn('fk_anexos');
             $table->dropForeign('ticket_history_fk_usuario_foreign');
             $table->dropColumn('fk_usuario');
+            $table->dropForeign('ticket_history_fk_ticket_foreign');
+            $table->dropColumn('fk_ticket');
         });
 
         Schema::dropIfExists('ticket_history');

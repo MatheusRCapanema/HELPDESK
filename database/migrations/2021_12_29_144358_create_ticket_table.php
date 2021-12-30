@@ -27,8 +27,7 @@ class CreateTicketTable extends Migration
             $table->foreign('fk_Area_Atendente')->references('id')->on('areas');
             $table->unsignedBigInteger('fk_Usu_Solicitante')->nullable();
             $table->foreign('fk_Usu_Solicitante')->references('id')->on('users');
-            $table->unsignedBigInteger('fk_ticket_history')->nullable();
-            $table->foreign('fk_ticket_history')->references('id')->on('ticket_history');
+            
             
         });
     }
@@ -52,8 +51,7 @@ class CreateTicketTable extends Migration
             $table->dropColumn('fk_Area_Atendente');
             $table->dropForeign('ticket_fk_Usu_Solicitante_foreign');
             $table->dropColumn('fk_Usu_Solicitante');
-            $table->dropForeign('ticket_fk_ticket_history_foreign');
-            $table->dropColumn('fk_ticket_history');
+            
         });
 
 
