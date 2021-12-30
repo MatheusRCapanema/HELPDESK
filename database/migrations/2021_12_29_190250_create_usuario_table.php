@@ -16,7 +16,7 @@ class CreateUsuarioTable extends Migration
         Schema::create('usuario', function (Blueprint $table) {
             $table->id();
             $table->String('Nome',100);
-            $table->String('Email',60);
+            $table->String('Email',60)->unique();
             $table->String('Senha',50);
             $table->unsignedBigInteger('fk_Area')->nullable();
             $table->foreign('fk_Area')->references('id')->on('areas');
