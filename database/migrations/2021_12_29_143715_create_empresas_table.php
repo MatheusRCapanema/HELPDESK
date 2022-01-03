@@ -17,7 +17,7 @@ class CreateEmpresasTable extends Migration
             $table->id('CNPJ');
             $table->String('Nome',50)->nullable();
             $table->String('Email',40)->nullable();
-            $table->String('telefone',10);
+            
             
         });
 
