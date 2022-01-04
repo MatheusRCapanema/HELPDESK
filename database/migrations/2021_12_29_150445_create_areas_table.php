@@ -31,16 +31,16 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
-<<<<<<< HEAD
+
         Schema::table('areas', function (Blueprint $table) {
             $table->dropForeign('areas_fk_CNPJ_foreign');
             $table->dropColumn('fk_CNPJ');
         });
-=======
+
     
            
   
->>>>>>> 1c92b1ca16c2fee9e1630baf38b8345127341401
+
 
         Schema::dropIfExists('areas');
     }
