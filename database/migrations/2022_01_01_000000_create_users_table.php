@@ -21,6 +21,11 @@ class CreateUsersTable  extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->unsignedBigInteger('fk_Area')->nullable();
+            $table->foreign('fk_Area')->references('id')->on('areas');
+            $table->unsignedBigInteger('fk_Perfil')->nullable();
+            $table->foreign('fk_Perfil')->references('id')->on('perfil');
+            
         });
     }
 
@@ -31,6 +36,12 @@ class CreateUsersTable  extends Migration
      */
     public function down()
     {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('users_fk_Area_foreign');
+            $table->dropColumn('fk_Area');
+            $table->dropForeign('users_fk_Perfil_foreign');
+            $table->dropColumn('fk_Perfil');
+        });
        
         
 
