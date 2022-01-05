@@ -17,16 +17,20 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/cadastro', function () {
-    return view('cadastro');
-})->name('site.cadastro');
-
 Route::get('/login', function () {
     return view('welcome');
 });
 
 Route::get('/inicio', function () {
     return view('welcome');
+});
+
+Route::get('/criar',function (){
+   return view('criar');
+});
+
+Route::get('/visualizar',function (){
+    return view('visualizar');
 });
 
 Route::get('/dashboard', function () {

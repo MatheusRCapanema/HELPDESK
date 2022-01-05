@@ -10,7 +10,9 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo"><img src="https://www.linkpicture.com/q/618ab4e5c384b18c23e00dc3_brb-logo-0-p-130x130q80-2.png" alt=""></a>
+        <a href="#" class="logo">
+            <img src="https://www.linkpicture.com/q/618ab4e5c384b18c23e00dc3_brb-logo-0-p-130x130q80-2.png" alt="">
+        </a>
         <ul>
             <li><a href="#banner"> Home</a></li>
             <li><a href="#" id="about"> Sobre</a></li>
