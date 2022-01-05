@@ -18,7 +18,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/tickets', [TicketController::class,'index']);
+
+Route::get('/tickets/create', [TicketController::class,'create'])->name('tickets.create');
+
+Route::get('/tickets', [TicketController::class,'index'])->name('tickets.index');
+
 
 Route::get('/inicio', function () {
     return view('welcome');
