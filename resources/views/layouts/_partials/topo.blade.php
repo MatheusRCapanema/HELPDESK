@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 <nav class="relative px-4 py-4 flex justify-between items-center bg-white topo">
-    <a class="text-3xl font-bold leading-none" href="#">
+    <a class="text-3xl font-bold leading-none" href="{{route('dashboard')}}">
         <img src="https://i.ibb.co/kGXMFTW/618ab4e5c384b18c23e00dc3-brb-logo-0-p-130x130q80-3.png" alt="618ab4e5c384b18c23e00dc3-brb-logo-0-p-130x130q80-3" border="0">
     </a>
     <div class="lg:hidden">
@@ -55,7 +55,34 @@
         </li>
         <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Outros</a></li>
     </ul>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
 
+            <x-dropdown-link :href="route('logout')"
+                             onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+
+                {{ __('Deslogar') }}
+
+
+            </x-dropdown-link>
+        </form>
+
+    <x-slot name="content">
+        <!-- Authentication -->
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <x-dropdown-link :href="route('logout')"
+                             onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+
+                {{ __('Deslogar') }}
+
+
+            </x-dropdown-link>
+        </form>
+    </x-slot>
 </nav>
 <div class="navbar-menu relative z-50 hidden">
     <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>

@@ -3,6 +3,7 @@
         <x-slot name="logo">
             <a href="/">
                 <img src="https://www.linkpicture.com/q/618ab4e5c384b18c23e00dc3_brb-logo-0-p-130x130q80-2.png" alt="">
+
             </a>
         </x-slot>
 
@@ -12,9 +13,11 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
             <div>
+
                 <x-label for="name" :value="__('Nome')" />
+
+
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
@@ -28,7 +31,11 @@
 
             <!-- Password -->
             <div class="mt-4">
+
                 <x-label for="password" :value="__('Senha')" />
+
+
+
 
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
@@ -36,9 +43,12 @@
                                 required autocomplete="new-password" />
             </div>
 
-            <!-- Confirm Password -->
+
             <div class="mt-4">
+
                 <x-label for="password_confirmation" :value="__('Confirmar Senha')" />
+
+
 
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
@@ -47,11 +57,13 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+
                     {{ __('Já é registrado?') }}
                 </a>
 
                 <x-button class="ml-4">
                     {{ __('Registrar') }}
+
                 </x-button>
             </div>
         </form>

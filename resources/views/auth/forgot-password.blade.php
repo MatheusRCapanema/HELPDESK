@@ -2,12 +2,19 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
+
                 <img src="https://www.linkpicture.com/q/618ab4e5c384b18c23e00dc3_brb-logo-0-p-130x130q80-2.png" alt="">
+
+
             </a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
+
             {{ __('Esqueceu sua senha? Sem problemas. Apenas informe seu email, que mandaremos um link para redefinir ela.') }}
+
+
+
         </div>
 
         <!-- Session Status -->
@@ -28,7 +35,9 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
+
                     {{ __('Link de redefinição') }}
+
                 </x-button>
             </div>
         </form>
