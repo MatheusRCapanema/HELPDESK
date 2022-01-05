@@ -9,5 +9,10 @@
 </head>
 <body>
     @include('layouts._partials.topo')
+    <h1>Tickets</h1>
+    @foreach($ticket as $ticketn)
+    <p>{{$ticketn->Assunto}}</p>
+    @endforeach
+   
 </body>
 </html>

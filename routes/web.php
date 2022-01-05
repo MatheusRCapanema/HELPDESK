@@ -23,7 +23,7 @@ Route::get('/login', function () {
     return view('welcome');
 });
 
-Route::get('/tickets', [TicketController::class,'index']);
+Route::get('/visualizar', [TicketController::class,'visualizarTickets']);
 
 
 Route::get('/inicio', function () {
@@ -35,9 +35,7 @@ Route::get('/criar',function (){
    return view('criar');
 });
 
-Route::get('/visualizar',function (){
-    return view('visualizar');
-});
+
 
 
 
