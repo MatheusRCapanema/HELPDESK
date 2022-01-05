@@ -2,11 +2,24 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
+
+            <!--Hamburguer-->
+            <div class="hidden space-x-8 lg:flex">
+                <a href="#">Menu 1</a>
+                <a href="#">Menu 2</a>
+                <a href="#">Menu 3</a>
+                <a href="#">Menu 4</a>
+            </div>
+            <div class="flex lg:hidden">
+                <div class="space-y-2">
+                    <span class="block w-8 h-0.5 bg-gray-600 animate-pulse"></span>
+                    <span class="block w-8 h-0.5 bg-gray-600 animate-pulse"></span>
+
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="https://www.linkpicture.com/q/618ab4e5c384b18c23e00dc3_brb-logo-0-p-130x130q80-2.png" alt="">
+                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
@@ -15,6 +28,7 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
                 </div>
             </div>
 
@@ -41,7 +55,10 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
+
                                 {{ __('Deslogar') }}
+
+
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -49,6 +66,16 @@
             </div>
 
             <!-- Hamburger -->
+
+            <div class="flex">
+
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="{{ route('dashboard') }}">
+                        <img src="https://www.linkpicture.com/q/618ab4e5c384b18c23e00dc3_brb-logo-0-p-130x130q80-2.png" alt="">
+                    </a>
+                </div>
+
             <div class="-mr-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -56,17 +83,20 @@
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
+
             </div>
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
+
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
+
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -83,7 +113,11 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
+
                         {{ __('Deslogar') }}
+
+                        {{ __('Log Out') }}
+
                     </x-responsive-nav-link>
                 </form>
             </div>

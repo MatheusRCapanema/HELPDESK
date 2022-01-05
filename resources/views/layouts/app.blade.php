@@ -21,12 +21,21 @@
             @include('layouts.navigation')
 
             <!-- Page Heading -->
+<<<<<<< HEAD
+            <!-- <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+
+                </div>
+            </header>
+                        -->
+=======
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
             </header>
 
+>>>>>>> 778e44eb5e7119ce4d103a764706ff3bc253660b
             <!-- Page Content -->
             <main>
                 {{ $slot }}

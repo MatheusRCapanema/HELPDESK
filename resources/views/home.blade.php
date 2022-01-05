@@ -10,12 +10,21 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo"><img src="https://www.linkpicture.com/q/618ab4e5c384b18c23e00dc3_brb-logo-0-p-130x130q80-2.png" alt=""></a>
+        <a href="#" class="logo">
+            <img src="https://www.linkpicture.com/q/618ab4e5c384b18c23e00dc3_brb-logo-0-p-130x130q80-2.png" alt="">
+        </a>
         <ul>
+
             <li><a href="#banner"> Home</a></li>
             <li><a href="#" id="about"> Sobre</a></li>
             <li><a href="#"> Time</a></li>
+
+            <li><a href="#"> Home</a></li>
+            <li><a href="#"> Sobre</a></li>
+            <li><a href="#"> Serviços</a></li>
+            <li><a href="#"> Time</a></li>
             <li><a href="{{route('login')}}" class="a-24" role="button">Login</a></li>
+
         </ul>
     </header>
 

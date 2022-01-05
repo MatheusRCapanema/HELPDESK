@@ -2,7 +2,11 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
+<<<<<<< HEAD
                 <img src="https://www.linkpicture.com/q/618ab4e5c384b18c23e00dc3_brb-logo-0-p-130x130q80-2.png" alt="">
+=======
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+>>>>>>> 778e44eb5e7119ce4d103a764706ff3bc253660b
             </a>
         </x-slot>
 
