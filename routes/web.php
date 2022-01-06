@@ -19,24 +19,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/login', function () {
-    return view('welcome');
-});
 
-Route::get('/visualizar', [TicketController::class,'visualizarTickets']);
+
+Route::get('/criar', [TicketController::class,'criarTickets'])->name('ticket.create');
+Route::get('/visualizar', [TicketController::class,'visualizarTickets'])->name('ticket.list');
+Route::post('/criar', [TicketController::class,'armazenarTickets'])->name('ticket.store');
 
 
 Route::get('/inicio', function () {
     return view('welcome');
 });
-
-
-Route::get('/criar',function (){
-   return view('criar');
-});
-
-
-
 
 
 Route::get('/dashboard', function () {

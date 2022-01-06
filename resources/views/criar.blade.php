@@ -9,5 +9,14 @@
 </head>
 <body>
     @include('layouts._partials.topo')
+    <h1>Criar tickets </h1>
+    <div>
+    <form action="{{route('ticket.store')}}" method= "post">
+    @csrf
+    <input type="text" name="Assunto" id="Assunto" placeholder="Assunto">
+    <textarea name="Problema" id="Problema" cols="30" rows="4" placeholder="Conteúdo"></textarea>
+    <button type="submit" name="">Enviar</button>
+    </form>
+    </div>
 </body>
 </html>
