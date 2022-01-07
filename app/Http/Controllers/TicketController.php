@@ -28,8 +28,7 @@ class TicketController extends Controller
     {
            $ticketData =  $request->all();
            $ticketData['fk_Usu_Solicitante'] = $request->user()->id;
-
-         
+           $ticketData['fk_status'] = 4;
 
            Ticket::create($ticketData);
 

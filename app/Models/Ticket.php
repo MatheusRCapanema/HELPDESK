@@ -11,6 +11,6 @@ class Ticket extends Model
     protected $table = 'ticket';
     use HasFactory;
 
-    protected $fillable = ['Assunto', 'Problema', 'fk_Usu_Solicitante'];
+    protected $fillable = ['Assunto', 'Problema', 'fk_Usu_Solicitante', 'fk_Prioridade', 'fk_status', 'fk_anexo', 'fk_Area_Atendente'];
     protected $hidden = [];
 }

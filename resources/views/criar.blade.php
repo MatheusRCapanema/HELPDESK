@@ -14,6 +14,14 @@
     <form action="{{route('ticket.store')}}" method= "post">
     @csrf
     <input type="text" name="Assunto" id="Assunto" placeholder="Assunto">
+    Prioridade
+    <select name="fk_Prioridade" id= "fk_Prioridade">
+        <option value="1">Baixa</option>
+        <option value="2">Media</option>
+        <option value="3">Alta</option>
+        <option value="4">Urgente</option>
+      </select>
+    <input type="text" name="Assunto" id="Assunto" placeholder="Assunto">
     <textarea name="Problema" id="Problema" cols="30" rows="4" placeholder="Conteúdo"></textarea>
     <button type="submit" name="">Enviar</button>
     </form>
