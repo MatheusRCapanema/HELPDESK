@@ -18,22 +18,23 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-
-
-
-Route::get('/criar', [TicketController::class,'criarTickets'])->name('ticket.create');
-Route::get('/visualizar', [TicketController::class,'visualizarTickets'])->name('ticket.list');
-Route::post('/criar', [TicketController::class,'armazenarTickets'])->name('ticket.store');
-
-
 Route::get('/inicio', function () {
     return view('welcome');
 });
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::prefix("/criar")->group(function (){
+    Route::get('/', [TicketController::class,'criarTickets'])->name('ticket.create');
+    Route::post('/', [TicketController::class,'armazenarTickets'])->name('ticket.store');
+});
+
+Route::prefix("/visualizar")->group(function (){
+    Route::get('/', [TicketController::class,'visualizarTickets'])->name('ticket.list');
+    Route::get('/ticket/{id}', [TicketController::class,'visualizarActionTickets'])->name('ticket.id');
+});
 
 Route::fallback(function (){
     return view('components.fallback');

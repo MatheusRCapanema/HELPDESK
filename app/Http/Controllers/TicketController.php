@@ -18,9 +18,15 @@ class TicketController extends Controller
         return view('visualizar', compact('ticket'));
     }
 
+    public function visualizarActionTickets($id)
+    {
+        $ticket = Ticket::findOrFail($id);
+        return view('visual-action', compact('ticket') );
+    }
+    
+
     public function criarTickets()
     {
-
         return view('criar');
     }
 
@@ -28,13 +34,14 @@ class TicketController extends Controller
     {
            $ticketData =  $request->all();
            $ticketData['fk_Usu_Solicitante'] = $request->user()->id;
-           $ticketData['fk_status'] = 4;
-
+           
            Ticket::create($ticketData);
 
-            return redirect()->route('ticket.list');
-        
+            return redirect()->route('ticket.list');  
     }
 
+    
+
+    
 
 }
