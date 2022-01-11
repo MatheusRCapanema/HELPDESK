@@ -17,6 +17,7 @@ class CreateTicketTable extends Migration
             $table->id();
             $table->text('Assunto')->nullable();
             $table->text('Problema');
+            $table->text('Name')->nullable();
             $table->unsignedBigInteger('fk_Prioridade')->nullable();
             $table->foreign('fk_Prioridade')->references('id')->on('prioridade');
             $table->unsignedBigInteger('fk_status')->nullable();

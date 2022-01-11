@@ -13,8 +13,6 @@ class TicketController extends Controller
     public function visualizarTickets()
     {
         $ticket = Ticket::get();
-
-
         return view('visualizar', compact('ticket'));
     }
 
@@ -30,18 +28,26 @@ class TicketController extends Controller
         return view('criar');
     }
 
+    public function editarTickets($id)
+    {
+        $ticket = Ticket::findOfFail($id);
+        return view('editar', compact('ticket'));
+    }
+
+
     public function armazenarTickets(Request $request)
     {
            $ticketData =  $request->all();
            $ticketData['fk_Usu_Solicitante'] = $request->user()->id;
+           $ticketData['fk_Area_Atendente']= $request->user()->fk_Area;
+           $ticketData['fk_status'] = 4;
            
            Ticket::create($ticketData);
 
             return redirect()->route('ticket.list');  
     }
 
-    
 
-    
+   
 
 }

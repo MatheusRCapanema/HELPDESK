@@ -31,9 +31,12 @@ Route::prefix("/criar")->group(function (){
     Route::post('/', [TicketController::class,'armazenarTickets'])->name('ticket.store');
 });
 
+
+
 Route::prefix("/visualizar")->group(function (){
     Route::get('/', [TicketController::class,'visualizarTickets'])->name('ticket.list');
     Route::get('/ticket/{id}', [TicketController::class,'visualizarActionTickets'])->name('ticket.id');
+    Route::post('/editar/{id}', [TicketController::class,'editarTickets'])->name('ticket.editId');
 });
 
 Route::fallback(function (){
