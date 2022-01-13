@@ -15,12 +15,19 @@
         <div class="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
             <div class="bg-white w-full shadow rounded p-8 sm:p-12 -mt-72">
                 <p class="text-3xl font-bold leading-7 text-center">Criar Ticket</p>
+                @if($errors->any())
+                <div>
+                    @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </div>
+                @endif
                 <form action="{{route('ticket.store')}}" method="post">
                     @csrf
                     <div class="md:flex items-center mt-12">
                         <div class="w-full md:w-1/2 flex flex-col">
                             <label class="font-semibold leading-none">Assunto</label>
-                            <input type="text" name="Assunto" id="Assunto" placeholder="Assunto" class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200" />
+                            <input type="text" name="Assunto" id="Assunto" placeholder="Assunto" value="{{old('Assunto')}}" class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200" />
                         </div>
                         <div class="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
                             <label class="font-semibold leading-none">Prioridade</label>
@@ -35,7 +42,7 @@
                     <div>
                         <div class="w-full flex flex-col mt-8">
                             <label class="font-semibold leading-none">Problema</label>
-                            <textarea name="Problema" id="Problema" cols="30" rows="4" placeholder="Conteúdo" type="text" class="h-40 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"></textarea>
+                            <textarea name="Problema" id="Problema" cols="30" rows="4" placeholder="Conteúdo" type="text"  class="h-40 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200">{{old('Problema')}}</textarea>
                         </div>
                     </div>
                     <div class="flex items-center justify-center w-full">
