@@ -5,15 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class areas extends Model
+class Areas extends Model
 {
-    public $timestamps = false;
+    
     protected $table = 'areas';
+    protected $fillable = ['id', 'Nome_area', 'telefone', 'fk_CNPJ'];
     use HasFactory;
 
-    protected $fillable = ['id', 'Nome_area' , 'telefone' , 'fk_CNPJ' , 'fk_CNPJ'];
-    protected $hidden = [];
 
+    public function empresa(){
+        return $this-> belongsTo(Empresa::class,'FK_CNPJ' );   // relacionamento 1 , 1
+    }                   
+    
+    public function user(){
+        return $this-> hasOne(User::class );   // relacionamento 1 , 1
+    }        
     
 
 }

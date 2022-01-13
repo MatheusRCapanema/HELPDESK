@@ -14,5 +14,9 @@ class Ticket extends Model
     protected $fillable = ['id', 'Assunto', 'Problema', 'fk_Usu_Solicitante', 'fk_Prioridade', 'fk_status', 'fk_anexo', 'fk_Area_Atendente'];
     protected $hidden = [];
 
+    public function user(){
+        return $this-> belongsTo(User::class, 'fk_Usu_Solicitante');   // relacionamento 1 , 1
+    }  
     
+
 }

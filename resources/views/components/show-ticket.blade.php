@@ -92,7 +92,7 @@
                                 <td class="py-3 px-6 text-left"> <!-- Solicitante -->
                                     <div class="flex items-center">
                                         <div class="mr-2">
-                                            <p>{{$ticket->fk_Usu_Solicitante}}</p>
+                                            <p>{{$ticket->user->name}}</p>
                                             
                                         </div>
                                     </div>

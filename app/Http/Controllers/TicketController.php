@@ -21,7 +21,6 @@ class TicketController extends Controller
         $ticket = Ticket::findOrFail($id);
         return view('visual-action', compact('ticket') );
     }
-    
 
     public function criarTickets()
     {
@@ -30,10 +29,10 @@ class TicketController extends Controller
 
     public function editarTickets($id)
     {
-        $ticket = Ticket::findOfFail($id);
+        $ticket = Ticket::findOrFail($id);
+        
         return view('editar', compact('ticket'));
     }
-
 
     public function armazenarTickets(Request $request)
     {
