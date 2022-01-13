@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ValidacaoTicket;
 use App\Models\Ticket;
 
 use Illuminate\Http\Request;
@@ -35,7 +36,7 @@ class TicketController extends Controller
     }
 
 
-    public function armazenarTickets(Request $request)
+    public function armazenarTickets(ValidacaoTicket $request)
     {
            $ticketData =  $request->all();
            $ticketData['fk_Usu_Solicitante'] = $request->user()->id;
