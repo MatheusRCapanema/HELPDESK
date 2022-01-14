@@ -15,10 +15,10 @@
         <div class="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
             <div class="bg-white w-full shadow rounded p-8 sm:p-12 -mt-72" style="width: 1076px">
                 <p class="text-3xl font-bold leading-7 text-center">Visualizar Tickets</p>
-                <form >
+                <form action="{{route('ticket.editId')}}" method="GET">
                     @csrf
       
-                    @include('components.view-ticket')  
+                    @include('components.show-ticket')  
                     
                     <div class="flex items-center justify-center w-full">
                         <button type="submit" name="" class="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none">

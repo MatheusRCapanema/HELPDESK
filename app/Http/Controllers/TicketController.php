@@ -30,8 +30,7 @@ class TicketController extends Controller
 
     public function editarTickets($id)
     {
-        $ticket = Ticket::findOrFail($id);
-        
+        $ticket = Ticket::findOrFail($id);   
         return view('editar', compact('ticket'));
     }
 

@@ -17,6 +17,9 @@ class Ticket extends Model
     public function user(){
         return $this-> belongsTo(User::class, 'fk_Usu_Solicitante');   // relacionamento 1 , 1
     }  
-    
+
+    public function area(){
+        return $this-> belongsTo(Areas::class , 'fk_Area_Atendente' );   // relacionamento 1 , 1
+    }  
 
 }

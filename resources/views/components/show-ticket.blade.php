@@ -100,7 +100,7 @@
                                 <td class="py-3 px-6 text-left"> <!-- área -->
                                     <div class="flex items-center">
                                         <div class="mr-2">
-                                            <p>{{$ticket->fk_Area_Atendente}}</p>
+                                            <p>{{$ticket->area->Nome_area}}</p>
                                         </div>
                                     </div>
                                 </td>          

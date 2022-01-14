@@ -19,7 +19,11 @@ class Areas extends Model
     
     public function user(){
         return $this-> hasOne(User::class );   // relacionamento 1 , 1
-    }        
+    } 
+    
+    public function ticket(){
+        return $this-> hasOne(User::class );   // relacionamento 1 , 1
+    }    
     
 
 }
