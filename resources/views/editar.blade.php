@@ -41,11 +41,16 @@
                         <textarea name="Problema" id="Problema" cols="30" rows="4" placeholder="Conteúdo" type="text" class="h-40 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200">{{$ticket->Problema}}</textarea>
                     </div>
                 </div>
-                <div class="flex items-center justify-center w-full">
-                    <button type="submit" name="" class="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none" value="Update Ticket">
+                <div class="flex items-center justify-evenly w-full">
+                    <button type="submit" name="" class="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none" value="Update Ticket" >
                         Editar
                     </button>
+                    
+                    <button type="submit" name="" class="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none">
+                        Voltar
+                    </button>
                 </div>
+               
             </form>
         </div>
     </div>
