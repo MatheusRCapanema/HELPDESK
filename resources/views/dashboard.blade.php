@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
 </head>
-<body class="bg-blue-500">
+<body class="min-h-screen bg-gradient-to-b from-blue-800 to-blue-600">
     @include('layouts._partials.topo')
 </body>
 </html>
