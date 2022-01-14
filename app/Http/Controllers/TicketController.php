@@ -45,7 +45,7 @@ class TicketController extends Controller
     public function editarTickets($id)
     {
         $ticket = Ticket::findOrFail($id);
-        return view('ticket.editar',['ticket'=>$ticket]);
+        return view('editar',['ticket'=>$ticket]);
     }
     public function update($id, Request $request){
         $this->validate($request,[
