@@ -31,13 +31,12 @@ Route::prefix("/criar")->group(function (){
     Route::post('/', [TicketController::class,'armazenarTickets'])->name('ticket.store');
 });
 
-
+Route::get('visualizar/editar/{id}', [TicketController::class,'editarTickets'])->name('ticket.edit');
+Route::put('/visualizar/{id}',[TicketController::class,'update'])->name('ticket.update');
 
 Route::prefix("/visualizar")->group(function (){
     Route::get('/', [TicketController::class,'visualizarTickets'])->name('ticket.list');
     Route::get('/ticket/{id}', [TicketController::class,'visualizarActionTickets'])->name('ticket.id');
-    Route::get('/editar/{id}', [TicketController::class,'editarTickets'])->name('ticket.edit');
-    Route::post('/update/{id}',[TicketController::class,'update'])->name('ticket.update');
     Route::get('/deletar/{id}', [TicketController::class , 'criar'])->name('ticket.delete'); //Criar function
 });
 
