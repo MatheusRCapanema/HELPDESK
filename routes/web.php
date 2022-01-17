@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,8 +38,14 @@ Route::put('/visualizar/{id}',[TicketController::class,'update'])->name('ticket.
 Route::prefix("/visualizar")->group(function (){
     Route::get('/', [TicketController::class,'visualizarTickets'])->name('ticket.list');
     Route::get('/ticket/{id}', [TicketController::class,'visualizarActionTickets'])->name('ticket.id');
+    Route::post('/ticket/store', [CommentController::class,'armazenarComments'])->name('comment.store');
     Route::get('/deletar/{id}', [TicketController::class , 'criar'])->name('ticket.delete'); //Criar function
 });
+
+
+
+
+
 
 Route::fallback(function (){
     return view('components.fallback');
