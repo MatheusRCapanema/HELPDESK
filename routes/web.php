@@ -37,7 +37,9 @@ Route::put('/visualizar/{id}',[TicketController::class,'update'])->name('ticket.
 Route::prefix("/visualizar")->group(function (){
     Route::get('/', [TicketController::class,'visualizarTickets'])->name('ticket.list');
     Route::get('/ticket/{id}', [TicketController::class,'visualizarActionTickets'])->name('ticket.id');
-    Route::get('/deletar/{id}', [TicketController::class , 'criar'])->name('ticket.delete'); //Criar function
+    Route::get('/deletar/{id}', [TicketController::class , 'delete']);
+    Route::post('/deletar/{id}', [TicketController::class , 'destroy'])->name('ticket.destroy'); //Criar function
+
 });
 
 Route::fallback(function (){

@@ -67,5 +67,17 @@ class TicketController extends Controller
         return redirect()->route('ticket.list')->with('message', 'Ticket editado com sucesso!');
     }
 
+    public function delete($id){
+        $ticket=Ticket::findOrFail($id);
+        return view('visualizar',compact('ticket'));
+    }
+
+    public function destroy($id){
+  
+        $ticket=Ticket::findOrFail($id);
+        $ticket->delete();
+        return redirect()->action('ticket.list');
+    }
+
 
 }
