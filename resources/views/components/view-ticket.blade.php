@@ -5,8 +5,8 @@
                 <table class="min-w-max w-full table-auto">
                     <thead>
                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                        <th class="py-3 px-6 text-left">Ticket</th>
-                        <th class="py-3 px-6 text-left">Assunto</th>
+                        <th class="py-3 px-6 text-center">Ticket</th>
+                        <th class="py-3 px-6 text-center">Assunto</th>
                         <th class="py-3 px-6 text-center">Prioridade</th>
                         <th class="py-3 px-6 text-center">Status</th>
                         <th class="py-3 px-6 text-center">Solicitante</th>
@@ -18,22 +18,22 @@
                     @foreach($ticket as $ticketn)
                         <tbody class="text-gray-600 text-sm font-light">
                         <tr class="border-b border-gray-200 hover:bg-gray-100">
-                            <td class="py-3 px-6 text-left whitespace-nowrap"> <!-- Ticket id -->
-                                <div class="flex items-center">
+                            <td class="py-3 px-6 text-rigth whitespace-nowrap"> <!-- Ticket id -->
+                                <div class="text-center">
                                     <div class="mr-2">
                                         <p>{{$ticketn->id}}</p>
                                     </div>
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-left"> <!-- Assunto -->
-                                <div class="flex items-center">
+                                <div class="text-center">
                                     <div class="mr-2">
                                         <p>{{$ticketn->Assunto}}</p>
                                     </div>
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-left"> <!-- Prioridade -->
-                                <div class="flex items-center">
+                                <div class="text-center">
                                     <div class="mr-2">
                                         @switch($ticketn->fk_Prioridade)
                                             @case('1')
@@ -56,7 +56,7 @@
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-left"> <!-- Status -->
-                                <div class="flex items-center">
+                                <div class="text-center">
                                     <div class="mr-2">
                                         @switch($ticketn->fk_status)
                                             @case('1')
@@ -82,7 +82,7 @@
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-left"> <!-- Solicitante -->
-                                <div class="flex items-center">
+                                <div class="text-center">
                                     <div class="mr-2">
                                         <p>{{$ticketn->user->name}}</p>
 
@@ -90,7 +90,7 @@
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-left"> <!-- área -->
-                                <div class="flex items-center">
+                                <div class="text-center">
                                     <div class="mr-2">
                                         <p>{{$ticketn->area->Nome_area}}</p>
                                     </div>
