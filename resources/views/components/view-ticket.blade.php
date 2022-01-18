@@ -131,7 +131,7 @@
             </tr>
             </tbody>
             @endforeach
-            
+        </table>
 
 
         </div>
