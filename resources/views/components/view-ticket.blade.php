@@ -125,14 +125,13 @@
                                         </svg>
                                     </div>
                                     @endif
-                                </div>
-                               
-            </div>
-            </td>
+                                </div>                              
+                        </div>
+                    </td>
             </tr>
-            
-            @endforeach
             </tbody>
+            @endforeach
+            
 
             </table>
         </div>

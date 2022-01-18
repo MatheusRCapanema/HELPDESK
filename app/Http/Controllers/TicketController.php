@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Input;
 
 class TicketController extends Controller
 {
+
+    // ------------------------- Visualizar Tickets ------------------------------
     public function visualizarTickets()
     {
         $ticket = Ticket::get();
@@ -23,13 +25,12 @@ class TicketController extends Controller
         return view('visual-action', compact('ticket') );
     }
 
+    // -------------------- Criar e Armazenar Tickets --------------------------
 
     public function criarTickets()
     {
         return view('criar');
     }
-
-
 
     public function armazenarTickets(Request $request)
     {
@@ -43,6 +44,7 @@ class TicketController extends Controller
         return redirect()->route('ticket.list')->with('message', 'Ticket criado com sucesso!');
     }
 
+    // -------------- Editar Tickets --------------------------------
     public function editarTickets($id)
     {
         
@@ -62,21 +64,21 @@ class TicketController extends Controller
             'Problema'=>'required'
         ]);
         $ticket->update($request->all());
-      
-        
+
         return redirect()->route('ticket.list')->with('message', 'Ticket editado com sucesso!');
     }
 
+    // ----------------------- Deletar Tickets -----------------------------
     public function delete($id){
         $ticket=Ticket::findOrFail($id);
-        return view('visualizar',compact('ticket'));
+        return view('components\view-ticket',compact('ticket'));
     }
 
     public function destroy($id){
   
         $ticket=Ticket::findOrFail($id);
         $ticket->delete();
-        return redirect()->action('ticket.list');
+        return redirect()->route('ticket.list');
     }
 
 
