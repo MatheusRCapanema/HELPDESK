@@ -23,7 +23,7 @@ class Ticket extends Model
     }  
 
     public function comment(){
-        return $this-> hasMany(Comment::class);
+        return $this-> hasMany(Comment::class, 'fk_ticket');
     }
 
 }
