@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +40,6 @@ Route::prefix("/visualizar")->group(function (){
     Route::get('/ticket/{id}', [TicketController::class,'visualizarActionTickets'])->name('ticket.id');
     Route::DELETE('/delete/{id}', [TicketController::class , 'delete'])->name('ticket.destroy');
 });
-
 
 Route::fallback(function (){
     return view('components.fallback');
