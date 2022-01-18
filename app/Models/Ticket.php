@@ -22,4 +22,8 @@ class Ticket extends Model
         return $this-> belongsTo(Areas::class , 'fk_Area_Atendente' );   // relacionamento 1 , 1
     }  
 
+    public function comment(){
+        return $this-> hasMany(Comment::class);
+    }
+
 }
