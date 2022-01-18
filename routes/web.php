@@ -38,18 +38,10 @@ Route::put('/visualizar/{id}',[TicketController::class,'update'])->name('ticket.
 Route::prefix("/visualizar")->group(function (){
     Route::get('/', [TicketController::class,'visualizarTickets'])->name('ticket.list');
     Route::get('/ticket/{id}', [TicketController::class,'visualizarActionTickets'])->name('ticket.id');
-
-    
-    Route::get('/deletar/{id}', [TicketController::class , 'delete']);
     Route::get('/deletar/{id}', [TicketController::class , 'destroy'])->name('ticket.destroy'); //Criar function
     Route::post('/ticket/store', [CommentController::class,'armazenarComments'])->name('comment.store');
 
 });
-
-
-
-
-
 
 Route::fallback(function (){
     return view('components.fallback');

@@ -25,6 +25,7 @@ class TicketController extends Controller
         return view('visual-action', compact('ticket') );
     }
 
+
     // -------------------- Criar e Armazenar Tickets --------------------------
 
     public function criarTickets()
@@ -47,16 +48,16 @@ class TicketController extends Controller
     // -------------- Editar Tickets --------------------------------
     public function editarTickets($id)
     {
-        
+
         if(!$ticket = Ticket::find($id)){
-            
+
             return redirect()->back();
         }
         return view('editar',compact('ticket'));
     }
     public function update($id, Request $request){
         if(!$ticket = Ticket::find($id)){
-            
+
             return redirect()->back();
         }
         $this->validate($request,[
@@ -64,6 +65,7 @@ class TicketController extends Controller
             'Problema'=>'required'
         ]);
         $ticket->update($request->all());
+
 
         return redirect()->route('ticket.list')->with('message', 'Ticket editado com sucesso!');
     }
@@ -81,5 +83,6 @@ class TicketController extends Controller
         return redirect()->route('ticket.list');
     }
 
+ 
 
 }
