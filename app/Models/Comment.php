@@ -12,5 +12,11 @@ class Comment extends Model
 
     protected $fillable = ['id', 'Mensagem','fk_status','fk_anexos','fk_usuario','fk_ticket' ];
     protected $hidden = [];
-    use HasFactory;
+    
+
+    public function ticket(){
+        return $this-> belongsTo(Ticket::class, 'fk_ticket');
+    }
+
+
 }
