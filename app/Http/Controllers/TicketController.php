@@ -22,7 +22,11 @@ class TicketController extends Controller
         $ticket = Ticket::findOrFail($id);
         return view('visual-action', compact('ticket') );
     }
-
+    public function visualizarTicketsDel()
+    {
+        $ticket = Ticket::get();
+        return view('deletar', compact('ticket'));
+    }
 
     public function criarTickets()
     {
@@ -45,16 +49,16 @@ class TicketController extends Controller
 
     public function editarTickets($id)
     {
-        
+
         if(!$ticket = Ticket::find($id)){
-            
+
             return redirect()->back();
         }
         return view('editar',compact('ticket'));
     }
     public function update($id, Request $request){
         if(!$ticket = Ticket::find($id)){
-            
+
             return redirect()->back();
         }
         $this->validate($request,[
@@ -62,10 +66,14 @@ class TicketController extends Controller
             'Problema'=>'required'
         ]);
         $ticket->update($request->all());
-      
-        
+
+
         return redirect()->route('ticket.list')->with('message', 'Ticket editado com sucesso!');
     }
-
+    public function destroy($id){
+        $ticket=Ticket::findOrFail($id);
+        $ticket->delete();
+        return redirect('resources/views/visualizar')->with('Sucesso','Ticket Removido');
+    }
 
 }
